@@ -3,17 +3,9 @@
   var methods = {
     init : function( options ) {
 
-     // Chainable!
     return this.each(function(){
 
-       var $this = $(this),
-           data  = $this.data('dndUploader', options);
-           
-       // If the plugin hasn't been initialized yet
-       if ( ! data ) {
-         // Initial setup
-
-       }
+       var $this = $(this);
        
        $this.bind('dragenter.dndUploader', methods.dragEnter);
        $this.bind('dragover.dndUploader', methods.dragOver);
@@ -22,13 +14,17 @@
     },
     
     dragEnter : function ( event ) {
+      var $this = $(this);
+      
       event.stopPropagation();
       event.preventDefault();
-
+      
       return false;
     },
     
     dragOver : function ( event ) {
+      var $this = $(this);
+      
       event.stopPropagation();
       event.preventDefault();
             
@@ -36,9 +32,11 @@
     },
 
     drop : function( event ) {
+      var $this = $(this);
+      
       event.stopPropagation();
       event.preventDefault();
-      
+            
       return false;
     }
   };
