@@ -10,26 +10,12 @@
        $this.bind('dragenter.dndUploader', methods.dragEnter);
        $this.bind('dragover.dndUploader', methods.dragOver);
        $this.bind('drop.dndUploader', methods.drop);
-       $this.bind('dragleave.dndUploader', methods.dragLeave);
      });
     },
     
     dragEnter : function ( event ) {    
       event.stopPropagation();
       event.preventDefault();
-      
-      return false;
-    },
-    
-    dragLeave : function ( event ) {
-      var $this = $(this);
-      
-      event.stopPropagation();
-      event.preventDefault();
-      
-      if (!methods.inside(event, $this)) {
-        console.log('actually left');
-      };
       
       return false;
     },
@@ -46,19 +32,6 @@
       event.preventDefault();
             
       return false;
-    },
-    
-    inside : function( event, element ) {
-      if (event.offsetX > element.outerWidth())
-        return false;
-      
-      if (event.offsetY > element.outerHeight())
-        return false;
-        
-      if (event.offsetX < 0 || event.offsetY < 0)
-        return false;
-        
-      return true;
     }
   };
   
