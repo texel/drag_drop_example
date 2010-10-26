@@ -3,14 +3,19 @@
   var methods = {
     init : function( options ) {
 
-    return this.each(function(){
-
-       var $this = $(this);
-       
-       $this.bind('dragenter.dndUploader', methods.dragEnter);
-       $this.bind('dragover.dndUploader', methods.dragOver);
-       $this.bind('drop.dndUploader', methods.drop);
-     });
+      return this.each( function () {
+      
+        var $this = $(this);
+        
+        $.each(options, function( label, setting ) {
+          $this.data(label, setting);
+        });
+     
+        $this.bind('dragenter.dndUploader', methods.dragEnter);
+        $this.bind('dragover.dndUploader', methods.dragOver);
+        $this.bind('drop.dndUploader', methods.drop);
+    
+      });
     },
     
     dragEnter : function ( event ) {    
@@ -31,7 +36,20 @@
       event.stopPropagation();
       event.preventDefault();
       
-      console.log( event.originalEvent.dataTransfer.files );
+      var $this = $(this);
+      var dataTransfer = event.originalEvent.dataTransfer;
+      
+      if (dataTransfer.files.length > 0) {
+        $.each(dataTransfer.files, function ( i, file ) {
+          var xhr    = new XMLHttpRequest();
+          var upload = xhr.upload;
+          
+          xhr.open($this.data('method') || 'POST', $this.data('url'), true);
+          xhr.setRequestHeader('X-Filename', file.fileName);
+          
+          xhr.send(file);
+        });
+      };
             
       return false;
     }
