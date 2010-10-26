@@ -7,4 +7,5 @@ get '/' do
 end
 
 put '/' do
+  puts "uploaded #{env['HTTP_X_FILENAME']} - #{request.body.read.size} bytes"
 end
