@@ -30,6 +30,8 @@
     drop : function( event ) {    
       event.stopPropagation();
       event.preventDefault();
+      
+      console.log( event.originalEvent.dataTransfer.files );
             
       return false;
     }
