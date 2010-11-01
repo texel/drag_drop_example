@@ -1,0 +1,15 @@
+= Drag and Drop Example
+
+This is example code meant to accompany a recent Onehub blog post:
+http://onehub.com/blog/posts/designing-an-html5-drag-drop-file-uploader-using-sinatra-and-jquery-part-1
+
+== Getting Started
+
+The steps in the blog post are explicitly tagged, so the code included in the links won't change. If you'd like to get going with the latest version of this repo:
+
+1. +git clone git://github.com/texel/drag_drop_example.git+
+2. +sudo gem install bundler+
+3. +bundle install+
+4. +ruby app.rb+
+
+That's it! Happy hacking!
