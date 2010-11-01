@@ -7,9 +7,9 @@ http://onehub.com/blog/posts/designing-an-html5-drag-drop-file-uploader-using-si
 
 The steps in the blog post are explicitly tagged, so the code included in the links won't change. If you'd like to get going with the latest version of this repo:
 
-1. +git clone git://github.com/texel/drag_drop_example.git+
-2. +sudo gem install bundler+
-3. +bundle install+
-4. +ruby app.rb+
+1. <tt>git clone git://github.com/texel/drag_drop_example.git</tt>
+2. <tt>sudo gem install bundler</tt>
+3. <tt>bundle install</tt>
+4. <tt>ruby app.rb</tt>
 
 That's it! Happy hacking!
