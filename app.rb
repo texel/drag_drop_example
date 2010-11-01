@@ -1,11 +1,11 @@
-require 'rubygems'
-require 'sinatra'
-require 'erb'
+require 'sinatra/base'
 
-get '/' do
-  erb :"index.html"
-end
+class App < Sinatra::Base
+  get '/' do
+    erb :index
+  end
 
-put '/' do
-  puts "uploaded #{env['HTTP_X_FILENAME']} - #{request.body.read.size} bytes"
+  put '/' do
+    puts "uploaded #{env['HTTP_X_FILENAME']} - #{request.body.read.size} bytes"
+  end
 end
