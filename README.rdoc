@@ -10,6 +10,6 @@ The steps in the blog post are explicitly tagged, so the code included in the li
 1. <tt>git clone git://github.com/texel/drag_drop_example.git</tt>
 2. <tt>sudo gem install bundler</tt>
 3. <tt>bundle install</tt>
-4. <tt>ruby app.rb</tt>
+4. <tt>rackup</tt>
 
 That's it! Happy hacking!
